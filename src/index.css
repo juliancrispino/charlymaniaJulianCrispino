@@ -1,9 +1,10 @@
 html {
     box-sizing: border-box;
-  }
+    }
   *, *:before, *:after {
     box-sizing: inherit;
-  }
+    }
+
 .menu-nav{
     display: flex;
     justify-content: space-around;
@@ -27,4 +28,22 @@ html {
 }
 .item-lista a:hover{
     color: black;
+}
+
+.titulo-logo{
+    display: flex;
+    align-items: center;
+
+}
+
+.logo{
+    max-width: 3rem;
+}
+
+.cartIcon{
+    color: white;
+}
+
+main{
+    flex-grow: 1;
 }
