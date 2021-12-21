@@ -47,3 +47,21 @@ html {
 main{
     flex-grow: 1;
 }
+
+/* ItemCount */
+.itemCard{
+    display: inline-block;
+    border: 1px solid black;
+    background-color: aquamarine;
+    text-align: center;
+    padding: .5rem 2rem;
+}
+.cantidadElegida{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 2rem;
+}
+.btnconfirmar{
+    margin-top: 1rem;
+}
