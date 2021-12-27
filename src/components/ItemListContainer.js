@@ -1,14 +1,13 @@
-import ItemCount from './ItemCount';
+import ItemList from "./ItemList"
 
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
 
-    const onAdd = () => {}
+    const onAdd = () => { }
 
     return (
-        <div>
-            {greeting}
-            <ItemCount stock={5} initial={1} onAdd={onAdd} />
+        <div className="contenedor-productos">
+            <ItemList />
         </div>
     )
 }
