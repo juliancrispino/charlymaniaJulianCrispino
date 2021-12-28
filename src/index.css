@@ -70,30 +70,31 @@ main{
 
 
 /* Contenedor productos - ItemListContainer*/
-.contenedor-producto{
-    display: flex;
-    flex-wrap: wrap;
-
-    margin: .5rem;
+.contenedor-productos{
+    display: grid;
+    margin: .5rem 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    
 }
+
 .tarjeta-producto{
-    max-width: 30%;
+    width: 15rem;
     border: 1px solid black;
     margin: .5rem;
     padding: .5rem;
     text-align: center;
+    background-color: rgba(212, 212, 212, 0.384);
 }
 .tarjeta-producto:hover{
     box-shadow: 2px 2px 5px black;
 }
 .img-producto{
-    width: 20rem;
+    max-width: 10rem;
 }
 .info-producto{
     line-height: .2rem ;
 }
 .nombre-producto{
-    text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
 }
