@@ -4,7 +4,7 @@ const NavBar = () => {
     return (
         <div className="menu-nav">
             <div className='titulo-logo'>
-                <h1 className="titulo-nav">Cajitas Malu</h1>
+                <h1 className="titulo-nav">Cajitas Malu  </h1>
                 <img className="logo" src="/logo.png" alt="Logo cajitas malu" />
             </div>
             <div>

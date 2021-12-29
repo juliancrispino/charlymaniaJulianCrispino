@@ -1,3 +1,4 @@
+import ItemDetail from "./ItemDetail"
 import { useEffect, useState } from "react"
 
 const items = [
@@ -8,11 +9,10 @@ const items = [
     { id: 5, nombre: "Como conseguir chicas", año: 1989, portada: "/img/como conseguir chicas.jpg", precio: 700, stock: 33, descripcion: "Quinto disco de estudio del artista Charly Garcia." },
 ]
 
+const ItemDetailContainer = () => {
 
 
-const ItemList = () => {
-
-    const [productos, setProductos] = useState([])
+    const [producto, setProducto] = useState()
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -22,15 +22,12 @@ const ItemList = () => {
             }, 2000)
         })
 
-        promesa.then((productos) => {
+        promesa.then((producto) => {
             setLoading(false)
-            setProductos(productos)
+            setProducto(producto[0])
         })
 
     })
-
-
-
 
     if (loading) {
         return (
@@ -38,27 +35,8 @@ const ItemList = () => {
         )
     } else {
         return (
-            productos.map((elemento, indice) => {
-                return (
-                    <div key={indice} className="tarjeta-producto">
-                        <img src={elemento.portada} alt={elemento.nombre} className="img-producto" />
-                        <div className="info-producto">
-                            <p className="nombre-producto">{elemento.nombre}</p>
-                            {/* <p className="año-producto">Año: {elemento.año}</p> */}
-                            <p className="precio-producto">Precio: ${elemento.precio}</p>
-                            {/* <ItemCount stock={elemento.stock} initial={1} /> */}
-                            <button>Ver detalles</button>
-                        </div>
-                    </div>
-
-                )
-            }
-
-            )
+            <ItemDetail producto={producto}/>
         )
-    }
-}
+    }}
 
-
-
-export default ItemList
+export default ItemDetailContainer

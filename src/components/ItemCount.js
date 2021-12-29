@@ -10,12 +10,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
+    //const onAdd = () => { }
+
 
     const aumentarContador = () => {
         if (contador < stock) {
             setContador(contador + 1)
         }
     }
+
 
     const confirmarCantidad = () => {
         console.log(`cantidad confirmada: ${contador}`);
