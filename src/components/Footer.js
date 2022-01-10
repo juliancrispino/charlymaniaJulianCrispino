@@ -4,9 +4,9 @@ const Footer = () => {
     return (
         <div className="menu-nav">
             <div className='titulo-logo'>
-                <h1 className="titulo-nav">Cajitas Malu</h1>
+                <h1 className="titulo-nav">CharlyManía</h1>
             </div>
-            <div className="copy">Copyright - Cajitas 2021</div>
+            <div className="copy">Copyright - Charly 2021</div>
             <div>
                 <ul className="lista">
                     <li className="item-lista"><a href="#">Home</a></li>

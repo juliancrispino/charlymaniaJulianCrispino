@@ -1,19 +1,18 @@
 import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-import Item from './components/Item';
 import Footer from './components/Footer.js';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Main from './components/Main';
+import { BrowserRouter } from "react-router-dom"
 
 
 function App() {
-  return<>
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <Main />
+      <Footer />
+    </BrowserRouter>
 
-    <NavBar />
-    <ItemListContainer />
-    <ItemDetailContainer />
-    <Footer />
-
-  </>;
+  )
 }
 
 export default App;
