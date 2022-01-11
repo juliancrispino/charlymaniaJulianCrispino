@@ -21,7 +21,7 @@ const ItemListContainer = () => {
     
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-    const {nombre} = useParams()
+    const {nombreCat} = useParams()
     
     
     
@@ -34,11 +34,11 @@ const ItemListContainer = () => {
             }, 2000)
         })
         
-        if(nombre){
+        if(nombreCat){
             // console.log("aca pediria productos de la categoria" + id);
             promesa.then((productos) => {
                 setLoading(false)
-                setProductos(productos)
+                setProductos(productos.filter(idx => idx.categoria === nombreCat))
             })
 
 
@@ -50,7 +50,7 @@ const ItemListContainer = () => {
             })
         }
 
-    }, [nombre])
+    }, [nombreCat])
 
 
 
