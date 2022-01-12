@@ -10,8 +10,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         }
     }
 
-    //const onAdd = () => { }
-
 
     const aumentarContador = () => {
         if (contador < stock) {
@@ -22,21 +20,23 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const confirmarCantidad = () => {
         console.log(`cantidad confirmada: ${contador}`);
-        //onAdd(contador)
+        onAdd(contador)
     }
 
 
 
     return (
         <div>
-            
+
             <p className="stock">Stock:{stock}</p>
-            <div className="cantidadElegida">
-            <button onClick={disminuirContador}>-</button>
-            <p className="numero-contador"> {contador} </p>
-            <button onClick={aumentarContador}>+</button>
+            <div className="boxCount">
+                <div className="cantidadElegida">
+                    <button className="modificarContador" onClick={disminuirContador}>-</button>
+                    <p className="numero-contador"> {contador} </p>
+                    <button className="modificarContador" onClick={aumentarContador}>+</button>
+                <button onClick={confirmarCantidad} className="btnconfirmar">Confirmar</button>
+                </div>
             </div>
-            <button onClick={confirmarCantidad} className="btnconfirmar">Confirmar</button>
 
         </div>
     )

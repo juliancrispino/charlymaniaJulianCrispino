@@ -57,16 +57,29 @@ main {
 }
 
 /* ItemCount */
+.boxCount{
+    display: inline;
+    width: 100%;
 
+}
 .cantidadElegida {
     display: flex;
-    justify-content: center;
     align-items: center;
     max-height: 2rem;
+    margin-top: 3rem;
+}
+.cantidadElegida :first-child{
+    margin-left: 0;
+}
+.modificarContador{
+    background-color: black;
+    color: white;
+    margin: 0 1rem;
 }
 
 .btnconfirmar {
     margin: 1rem;
+    margin-left: 0;
 }
 
 .stock {
@@ -78,6 +91,19 @@ main {
 .numero-contador {
     margin: rem;
 }
+
+.confirmacionCarrito{
+    margin-top: 3rem;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgba(150, 150, 150, 0.897);
+    border-radius: 5%;
+}
+.confirmacionCarrito p{
+    color: white;
+
+}
+
 
 
 /* Contenedor productos - ItemListContainer*/
