@@ -1,6 +1,7 @@
 import ItemDetail from "./ItemDetail"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { useParams } from "react-router-dom"
+import { CartContext } from "./CartContext"
 
 const items = [
     { id: 1, nombre: "Yendo de la cama al living", año: 1982, portada: "/img/yendo de la cama al living.jpg", precio: 800, stock: 25, descripcion: "Primer disco de estudio del artista Charly Garcia.", categoria : "disco" },
@@ -20,30 +21,39 @@ const ItemDetailContainer = () => {
 
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
+    const [agregado, setAgregado] = useState(false)
 
     const { id } = useParams()      //Retorna la variable  que coloco como parametro en el link.
 
+    const { addItem } = useContext(CartContext)
+
+    
     useEffect(() => {
         const promesa = new Promise((res, rej) => {
             setTimeout(() => {
                 res(items)
             }, 2000)
         })
-
+        
         promesa.then((producto) => {
             setLoading(false)
             setProducto(producto[id-1])
         })
+        
+    }, [id])
 
-    })
-
+    const onAdd = (contador) =>{
+        addItem(producto, contador)
+        setAgregado(true)
+    }
+    
     if (loading) {
         return (
             <div className='spinner'></div>
         )
     } else {
         return (
-            <ItemDetail producto={producto}/>
+            <ItemDetail producto={producto} onAdd={onAdd} agregado={agregado} />
         )
     }}
 

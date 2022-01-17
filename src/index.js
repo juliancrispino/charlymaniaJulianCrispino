@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom'
 
 // 3) Tener al menos un componente
 import App from "./App"
-
+import 'react-toastify/dist/ReactToastify.css';
 
 // 4) 
 ReactDOM.render(<App/> , document.getElementById('root'))
