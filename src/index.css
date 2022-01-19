@@ -54,7 +54,7 @@ a{
 }
 
 main {
-    min-height: 60vh;
+    min-height: 78vh;
     flex-grow: 1;
 }
 
@@ -198,12 +198,35 @@ main {
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid grey;
+    margin: auto 3rem;
+}
+.tarjeta_cart *{
+    width: 20%;
+}
+.tarjeta_cart :last-child{
+    width: 5%;
 }
 .img_cart {
     width: 3rem;
 }
 .btn_vaciar{
     margin-top: 2rem;
-    display: flex;
-    justify-content: center;
+    display: inline;
+    align-content: center;
+}
+.eliminar_item{
+    background-color: red;
+    color: white;
+    border: 0.5px solid black;
+    border-radius: 5%;
+}
+.eliminar_item:hover{
+    background-color: white;
+    color: red;
+    cursor: pointer;
+}
+
+.carritoVacio{
+    margin-top: 18vh;
+    margin-left: 40vw;
 }

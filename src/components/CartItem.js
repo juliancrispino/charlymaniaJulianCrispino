@@ -7,8 +7,8 @@ const CartItem = ({product, removeItem}) => {
                 <img className="img_cart" src={product.item.portada} alt={product.item.nombre} />
                 <h3>{product.item.nombre}</h3>
                 <p>Unidades: {product.count}</p>
-                <p>Precio: ${product.item.precio}</p>
-                <button onClick={() => removeItem(product.item.id)}>Eliminar</button>
+                <p>Precio unitarios: ${product.item.precio}</p>
+                <button className="eliminar_item" onClick={() => removeItem(product.item.id)}>Eliminar item</button>
             </article>
         </div>
     )

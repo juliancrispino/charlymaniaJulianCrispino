@@ -1,6 +1,9 @@
 import ItemList from "./ItemList"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { db } from "../firebase"
+
+console.log(db);
 
 const items = [
     { id: 1, nombre: "Yendo de la cama al living", año: 1982, portada: "/img/yendo de la cama al living.jpg", precio: 800, stock: 25, descripcion: "Primer disco de estudio del artista Charly Garcia.", categoria : "disco" },

@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useEffect } from 'react';
 import { useState } from 'react';
 
 
@@ -21,7 +21,10 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
 
     const addItem = (prod, count) => {
         if (isInCart(prod.id)) {
-            alert("Producto agregado previamente")
+            const indexActualizar = carrito.findIndex(element => element.item.id === prod.id)
+            carrito[indexActualizar].count = carrito[indexActualizar].count + count
+
+
         } else {
             console.log(`Agregaste ${prod.nombre}, cantidad ${count} `);
             const nuevoCarrito = {
@@ -45,6 +48,20 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
         return carrito.some(element => element.item.id === id)
         //return true : false
     }
+
+    useEffect(() => {
+        if(carrito.length > 0){
+            let cantidad = 0
+            carrito.forEach(item => cantidad = cantidad + item.count)
+            setCantidad_total(cantidad)
+        }else{
+            setCantidad_total(0)
+        }
+
+
+    },[carrito])
+
+
 
     const valorDelContexto = { carrito, cantidad_total, addItem, removeItem, clear, isInCart /* Todo lo que paso como prop */ }
 
