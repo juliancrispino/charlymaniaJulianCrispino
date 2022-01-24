@@ -1,6 +1,6 @@
 #  CharlyManía
 
-_Bienvenidos al E-commerce de Charly García_
+_Bienvenidos al E-commerce de Charly García_.
 
 ## Comienzo 🚀
 
@@ -23,9 +23,10 @@ _Esta tienda es un trabajo realizado para el curso de CoderHouse, de React Js_
 ## Construido con 🛠️
 
 
-* [React JS](https://es.reactjs.org/) - El framework usado
-* [CSS3](https://developer.mozilla.org/es/docs/Web/CSS) - Estilos
-* [React Router Dom](https://reactrouter.com/) - Usado para generar rutas de enlaces
+* [React JS](https://es.reactjs.org/) - El framework usado.
+* [CSS3](https://developer.mozilla.org/es/docs/Web/CSS) - Estilos.
+* [React Router Dom](https://reactrouter.com/) - Usado para generar rutas de enlaces.
+* [Firebase](https://firebase.google.com/) - Utilizado para guardar la base de datos de cada uno de los productos que se encuentran a la "venta" en el proyecto.
 
 
 ## Sobre el artista 📖
@@ -36,6 +37,10 @@ Puedes encontrar mucha informacion sobre Charly Garcia en su pagina de [Wikipedi
 ## Autores ✒️
 
 * **Julian Crispino** - *Trabajo Inicial* - [Github](https://github.com/juliancrispino)
+
+#### Cooperación
+
+* **Horacio Gutierrez** - *Profesor CoderHouse* 
 * **Manuel Sarmiento** - *Tutor CoderHouse* 
 
 

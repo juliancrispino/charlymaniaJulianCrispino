@@ -8,12 +8,14 @@ html {
     box-sizing: inherit;
 }
 
-a{
+a {
     text-decoration: none;
 }
-a:visited{
+
+a:visited {
     color: black;
 }
+
 .menu-nav {
     display: flex;
     justify-content: space-around;
@@ -56,14 +58,16 @@ a:visited{
     color: white;
     margin-right: 0.3rem;
 }
-.cuadro_carrito{
+
+.cuadro_carrito {
     border: 1px solid white;
     background-color: rgb(6, 168, 6);
     padding: 0 .3rem;
     border-radius: 30%;
     color: white;
 }
-.cart_widget{
+
+.cart_widget {
     display: flex;
     align-items: center;
 }
@@ -76,21 +80,24 @@ main {
 }
 
 /* ItemCount */
-.boxCount{
+.boxCount {
     display: inline;
     width: 100%;
 
 }
+
 .cantidadElegida {
     display: flex;
     align-items: center;
     max-height: 2rem;
     margin-top: 3rem;
 }
-.cantidadElegida :first-child{
+
+.cantidadElegida :first-child {
     margin-left: 0;
 }
-.modificarContador{
+
+.modificarContador {
     background-color: black;
     color: white;
     margin: 0 1rem;
@@ -111,14 +118,15 @@ main {
     margin: rem;
 }
 
-.confirmacionCarrito{
+.confirmacionCarrito {
     margin-top: 3rem;
     border: 1px solid black;
     text-align: center;
     background-color: rgba(150, 150, 150, 0.897);
     border-radius: 5%;
 }
-.confirmacionCarrito p{
+
+.confirmacionCarrito p {
     color: white;
 
 }
@@ -137,7 +145,7 @@ main {
     flex-wrap: wrap;
 }
 
-.tarjeta-producto {
+/* .tarjeta-producto {
     width: 20rem;
     border: 1px solid black;
     margin: .5rem;
@@ -153,7 +161,133 @@ main {
 .tarjeta-producto .img-producto {
     max-width: 10rem; 
     object-fit: contain;
+} */
+
+
+/********/
+/* CARD */
+/********/
+
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+.contentBox h2, .contentBox h3, .contentBox .buy {
+    margin: 0;
+    padding: 0;
+    font-family: "Istok Web", sans-serif;
 }
+
+.contentBox h3{
+    text-align: center;
+    width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: #191919;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #747474;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card::after {
+    content: "CharlyManía";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 3em;
+    color: rgba(126, 126, 126, 0.068);
+}
+
+.card .imgBox {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+
+.card .imgBox img {
+    transition: .5s;
+}
+
+/* .card:hover .imgBox img {
+    max-width: 50%;
+} */
+
+.card .contentBox {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.card .contentBox h3 {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    background: rgb(6, 168, 6);
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card:hover .contentBox .buy {
+    top: 0;
+    opacity: 1;
+}
+
+.mouse {
+    height: 300px;
+    width: auto;
+}
+
 
 .info-producto {
     line-height: .2rem;
@@ -170,6 +304,7 @@ main {
     color: white;
 }
 
+
 /*ItemDetail*/
 .detalle-producto {
     height: 70vh;
@@ -179,7 +314,8 @@ main {
     justify-content: space-around;
     align-items: center;
 }
-.detalle-producto .img-producto{
+
+.detalle-producto .img-producto {
     width: 30rem;
 }
 
@@ -209,7 +345,7 @@ main {
 
 /* CART */
 
-.tarjeta_cart{
+.tarjeta_cart {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -217,16 +353,20 @@ main {
     border-bottom: 1px solid grey;
     margin: auto 3rem;
 }
-.tarjeta_cart *{
+
+.tarjeta_cart * {
     width: 20%;
 }
-.tarjeta_cart :last-child{
+
+.tarjeta_cart :last-child {
     width: 5%;
 }
+
 .img_cart {
     width: 3rem;
 }
-.btn_vaciar{
+
+.btn_vaciar {
     display: block;
     margin: auto;
     background-color: red;
@@ -234,7 +374,8 @@ main {
     border: 0.5px solid black;
     border-radius: 5%;
 }
-.btn_finalizar{
+
+.btn_finalizar {
     display: block;
     margin: 2rem auto;
     padding: 1rem;
@@ -242,23 +383,26 @@ main {
     color: white;
 
 }
-.eliminar_item{
+
+.eliminar_item {
     background-color: red;
     color: white;
     border: 0.5px solid black;
     border-radius: 5%;
 }
-.eliminar_item:hover{
+
+.eliminar_item:hover {
     background-color: white;
     color: red;
     cursor: pointer;
 }
 
-.carritoVacio{
+.carritoVacio {
     margin-top: 18vh;
     margin-left: 40vw;
 }
-.precio_total{
+
+.precio_total {
     width: 10rem;
     font-size: large;
     color: white;
