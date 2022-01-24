@@ -11,6 +11,9 @@ html {
 a{
     text-decoration: none;
 }
+a:visited{
+    color: black;
+}
 .menu-nav {
     display: flex;
     justify-content: space-around;
@@ -51,11 +54,25 @@ a{
 
 .cartIcon {
     color: white;
+    margin-right: 0.3rem;
 }
+.cuadro_carrito{
+    border: 1px solid white;
+    background-color: rgb(6, 168, 6);
+    padding: 0 .3rem;
+    border-radius: 30%;
+    color: white;
+}
+.cart_widget{
+    display: flex;
+    align-items: center;
+}
+
 
 main {
     min-height: 78vh;
     flex-grow: 1;
+    padding: 3rem;
 }
 
 /* ItemCount */
@@ -210,9 +227,20 @@ main {
     width: 3rem;
 }
 .btn_vaciar{
-    margin-top: 2rem;
-    display: inline;
-    align-content: center;
+    display: block;
+    margin: auto;
+    background-color: red;
+    color: white;
+    border: 0.5px solid black;
+    border-radius: 5%;
+}
+.btn_finalizar{
+    display: block;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: grey;
+    color: white;
+
 }
 .eliminar_item{
     background-color: red;
@@ -229,4 +257,14 @@ main {
 .carritoVacio{
     margin-top: 18vh;
     margin-left: 40vw;
+}
+.precio_total{
+    width: 10rem;
+    font-size: large;
+    color: white;
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 2rem;
+    background-color: rgb(6, 168, 6);
+
 }

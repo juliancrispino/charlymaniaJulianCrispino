@@ -12,11 +12,13 @@ const CartWidget = () => {
     } else {
         return (
             <div>
-                <Link to="/cart">
+                <Link to="/cart" className="cart_widget">
                     <span className="material-icons cartIcon">
                         shopping_cart
                     </span>
+                    <div className="cuadro_carrito">
                     {cantidad_total}
+                    </div>
                 </Link>
             </div>
         )

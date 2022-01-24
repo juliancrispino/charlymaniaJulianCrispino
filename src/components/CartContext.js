@@ -14,7 +14,7 @@ const { Provider } = CartContext      //Destructuring. Podria obviarlo y usar Ca
 const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  children es una prop por defecto. Es todo lo que tengo dentro del commponente
 
     const [carrito, setCarrito] = useState([])
-    // const [precio_total, setPrecio_total] = useState(0)
+    const [precio_total, setPrecio_total] = useState(0)
     const [cantidad_total, setCantidad_total] = useState(0)
 
 
@@ -23,6 +23,7 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
         if (isInCart(prod.id)) {
             const indexActualizar = carrito.findIndex(element => element.item.id === prod.id)
             carrito[indexActualizar].count = carrito[indexActualizar].count + count
+            setCantidad_total(cantidad_total + count)
 
 
         } else {
@@ -32,6 +33,7 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
                 count: count
             }
             setCarrito([...carrito, nuevoCarrito])
+            setPrecio_total(precio_total + (prod.precio * count))
         }
     }
 
@@ -58,12 +60,11 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
             setCantidad_total(0)
         }
 
-
     },[carrito])
 
 
 
-    const valorDelContexto = { carrito, cantidad_total, addItem, removeItem, clear, isInCart /* Todo lo que paso como prop */ }
+    const valorDelContexto = { carrito, cantidad_total, addItem, removeItem, clear, isInCart, precio_total /* Todo lo que paso como prop */ }
 
     return (
         <Provider value={valorDelContexto}>     {/*Lo que pase como prop, se puede utilizar en todos los "children"*/}
