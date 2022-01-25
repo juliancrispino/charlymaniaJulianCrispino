@@ -230,13 +230,20 @@ main {
     z-index: 1;
 }
 
+.mouse {
+    height: 17rem;
+    width: auto;
+}
+/* .card:hover .imgBox img {
+    max-width: 75%;
+    max-height: 250px ;
+    transition: ease-in-out .5s;
+    
+}  */
 .card .imgBox img {
-    transition: .5s;
+    transition: ease-in-out .5s;
 }
 
-/* .card:hover .imgBox img {
-    max-width: 50%;
-} */
 
 .card .contentBox {
     position: relative;
@@ -283,10 +290,6 @@ main {
     opacity: 1;
 }
 
-.mouse {
-    height: 300px;
-    width: auto;
-}
 
 
 .info-producto {

@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/babd094f-550b-4f33-aad6-64fd2044126b/deploy-status)](https://app.netlify.com/sites/charlymania/deploys)
+
 #  CharlyManía
 
 _Bienvenidos al E-commerce de Charly García_.
@@ -5,6 +7,12 @@ _Bienvenidos al E-commerce de Charly García_.
 ## Comienzo 🚀
 
 El proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
+
+Si queres usar este proyecto, podes clonar el repositorio desde la consola:
+
+```
+git clone https://github.com/juliancrispino/charlymaniaJulianCrispino
+```
 
 Esta pagina esta hecha con _React JS_, por lo que se debe correr con *npm* desde la consola.
 
