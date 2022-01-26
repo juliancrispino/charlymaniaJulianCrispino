@@ -7,8 +7,7 @@ const CartWidget = () => {
     const { cantidad_total } = useContext(CartContext)
 
     if (cantidad_total === 0) {
-        return (<p></p>)
-
+        return (null)
     } else {
         return (
             <div>
@@ -17,7 +16,7 @@ const CartWidget = () => {
                         shopping_cart
                     </span>
                     <div className="cuadro_carrito">
-                    {cantidad_total}
+                        {cantidad_total}
                     </div>
                 </Link>
             </div>

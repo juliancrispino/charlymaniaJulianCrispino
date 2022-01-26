@@ -1,20 +1,12 @@
 import { createContext, useEffect } from 'react';
 import { useState } from 'react';
+import Swal from 'sweetalert2'
+export const CartContext = createContext()
 
-
-export const CartContext = createContext(/*{      Nombre del contexto. Importante exportarlo, ya que lo uso fuera de este componente
-    carrito : [],
-    precio_total : 0,
-    cantidad_total : 0
-}*/)
-
-//Patron Provider
-const { Provider } = CartContext      //Destructuring. Podria obviarlo y usar CartCotext.Provider
-
-const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  children es una prop por defecto. Es todo lo que tengo dentro del commponente
+const { Provider } = CartContext
+const CartProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
-    const [precio_total, setPrecio_total] = useState(0)
     const [cantidad_total, setCantidad_total] = useState(0)
 
 
@@ -24,16 +16,15 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
             const indexActualizar = carrito.findIndex(element => element.item.id === prod.id)
             carrito[indexActualizar].count = carrito[indexActualizar].count + count
             setCantidad_total(cantidad_total + count)
-
+            Swal.fire(`Agregaste ${prod.nombre} al carrito, cantidad: ${count}.`)            
 
         } else {
-            console.log(`Agregaste ${prod.nombre}, cantidad ${count} `);
+            Swal.fire(`Agregaste ${prod.nombre} al carrito, cantidad: ${count}.`)            
             const nuevoCarrito = {
                 item: prod,
                 count: count
             }
             setCarrito([...carrito, nuevoCarrito])
-            setPrecio_total(precio_total + (prod.precio * count))
         }
     }
 
@@ -48,26 +39,29 @@ const CartProvider = ({ children }) => {        //PROOVEDOR DEL CONTEXTO!  -  ch
 
     const isInCart = (id) => {
         return carrito.some(element => element.item.id === id)
-        //return true : false
+    }
+
+
+    const precioTotal = () => {
+        return carrito.reduce((accum, element) => accum = accum + (element.item.precio * element.count), 0)
     }
 
     useEffect(() => {
-        if(carrito.length > 0){
+        if (carrito.length > 0) {
             let cantidad = 0
             carrito.forEach(item => cantidad = cantidad + item.count)
             setCantidad_total(cantidad)
-        }else{
+        } else {
             setCantidad_total(0)
         }
 
-    },[carrito])
+    }, [carrito])
 
 
-
-    const valorDelContexto = { carrito, cantidad_total, addItem, removeItem, clear, isInCart, precio_total /* Todo lo que paso como prop */ }
+    const valorDelContexto = { carrito, cantidad_total, addItem, removeItem, clear, isInCart, precioTotal }
 
     return (
-        <Provider value={valorDelContexto}>     {/*Lo que pase como prop, se puede utilizar en todos los "children"*/}
+        <Provider value={valorDelContexto}>
             {children}
         </Provider>
     )
