@@ -19,7 +19,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
 
     const confirmarCantidad = () => {
-        console.log(`cantidad confirmada: ${contador}`);
         onAdd(contador)
     }
 
@@ -28,7 +27,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <div>
 
-            <p className="stock">Stock:{stock}</p>
             <div className="boxCount">
                 <div className="cantidadElegida">
                     <button className="modificarContador" onClick={disminuirContador}>-</button>
@@ -36,6 +34,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                     <button className="modificarContador" onClick={aumentarContador}>+</button>
                 <button onClick={confirmarCantidad} className="btnconfirmar">Confirmar</button>
                 </div>
+            <p className="stock">Stock: {stock}</p>
             </div>
 
         </div>

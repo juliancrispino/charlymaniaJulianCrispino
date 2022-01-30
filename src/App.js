@@ -7,7 +7,7 @@ import CartProvider from './components/CartContext';
 
 function App() {
   return (
-    <CartProvider>   {/* al cerrar el CustomComponent abajo, todo lo q esta adentro es pasado como PROP, de nombre children*/}
+    <CartProvider>
       <BrowserRouter>
         <NavBar />
         <Main />

@@ -1,5 +1,5 @@
 import { CartContext } from "./CartContext"
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import CartItem from "./CartItem"
 import { Link } from "react-router-dom"
 import { collection } from "firebase/firestore"
@@ -25,23 +25,26 @@ const Cart = () => {
             total: precioTotal(),
         }
 
-        const pedido = addDoc(coleccionProductos,orden)
+        const pedido = addDoc(coleccionProductos, orden)
 
         pedido
-        .then((resultado)=>{
-            return Swal.fire (
-                `N° de Orden:  ${resultado.id}`,
-                `
+            .then((resultado) => {
+                return Swal.fire(
+                    `N° de Orden:  ${resultado.id}`,
+                    `
                 El total de tu compra es $${orden.total}.
                 ¡Gracias por tu compra!
                 `,
-                'success',
-                clear()
-            )
-        })
-        .catch((error)=>{
-            return Swal.fire(error)
-        })
+                    'success',
+                    clear()
+                )
+            })
+            .catch((error) => {
+                return Swal.fire({
+                    icon: 'error',
+                    text: 'Algo salio mal',
+                })
+            })
     }
 
     if (carrito.length === 0) {
@@ -58,11 +61,13 @@ const Cart = () => {
                 <div className="precio_total">
                     <p>Total: $ {precioTotal()}</p>
                 </div>
-
-                
-                    
-                <button className="btn_finalizar" onClick={crearOrden} >Finalizar compra</button>
-                <button className="btn_vaciar" onClick={clear}>Vaciar carrito</button>
+                <button className="cta" onClick={crearOrden}>
+                    <span className="hover-underline-animation"> Finalizar compra </span>
+                    <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                        <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                    </svg>
+                </button>
+                <button className="btn vaciar_carrito" onClick={clear}>Vaciar carrito</button>
             </div>
         )
     }
