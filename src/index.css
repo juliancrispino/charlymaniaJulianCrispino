@@ -1,5 +1,6 @@
 html {
     box-sizing: border-box;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -80,6 +81,8 @@ a:visited {
 
 main {
     min-height: 76vh;
+    max-width: 80vw;
+    margin: auto;
     flex-grow: 1;
     padding: 3rem;
 }
@@ -112,18 +115,28 @@ main {
 
 .btnconfirmar {
     padding: 0.5rem;
-    margin: 1rem;
     margin-left: 0;
-    background: rgb(6, 168, 6);
+    background: green;
     border-radius: 30px;
+    border: none;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
+    transition: 0.5s;
+    padding: 0.6rem 1rem;
+    font-size: .7rem;
+    cursor: pointer;
 }
-
-.btnconfirmar a {
+.btnconfirmar:hover{
+    background-color: rgb(0, 66, 0);
+}
+.btnconfirmar:last-child{
+    margin-left: 1rem;
+}
+.btnconfirmar a{
     color: white;
 }
+
 
 .stock {
     margin-top: 1.5rem;
@@ -131,7 +144,10 @@ main {
 }
 
 .numero-contador {
-    margin: rem;
+    margin: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .confirmacionCarrito {
@@ -182,6 +198,7 @@ main {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: white;
 }
 
 .card {
@@ -263,6 +280,7 @@ main {
     color: white;
     font-weight: 700;
     letter-spacing: 1px;
+    margin-top: 1rem;
 }
 
 .card .contentBox .buy {
@@ -271,7 +289,7 @@ main {
     opacity: 0;
     padding: 10px 30px;
     margin-top: 15px;
-    color: #000000;
+    color: white;
     text-decoration: none;
     background: rgb(6, 168, 6);
     border-radius: 30px;
@@ -292,10 +310,11 @@ main {
 }
 
 .nombre-producto {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 4rem;
+    max-width: 60vw;
 }
 
 .link-ver-mas {
@@ -308,7 +327,7 @@ main {
 /*ItemDetail*/
 .detalle-producto {
     height: 70vh;
-    width: 90vw;
+    max-width: 90vw;
     margin: 1rem;
     display: flex;
     justify-content: space-around;
@@ -320,14 +339,17 @@ main {
 }
 
 .precio-producto {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
+    font-weight: 700;
 }
 
 .descripcion-producto {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-top: 1.5rem 0;
     font-style: italic;
+    color: #747474;
+    font-weight: 300;
 }
 
 
@@ -445,36 +467,17 @@ main {
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.3rem;
-    font-size: 1rem;
-    font-weight: 300;
-    color: black;
-    border: 1px solid rgb(255, 0, 43);
+    padding: 0.5rem;
+    background: red;
+    border-radius: 30px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    transition: 0.5s;
+    padding: 0.6rem 1rem;
+    font-size: .7rem;
     cursor: pointer;
-    position: relative;
-    background-color: white;
-    text-decoration: none;
-    overflow: hidden;
-    z-index: 1;
-    font-family: inherit;
-}
-
-.btn::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 0, 43);
-    transform: translateX(-100%);
-    transition: all .3s;
-    z-index: -1;
-}
-
-.btn:hover::before {
-    transform: translateX(0);
 }
 
 .vaciar_carrito {
@@ -492,10 +495,12 @@ main {
 .precio_total {
     width: 10rem;
     font-size: large;
-    color: white;
+    color: green;
     display: block;
-    margin: 2rem auto;
-    padding: 0.5rem 2rem;
-    background-color: rgb(6, 168, 6);
-
+    margin: 1rem auto 0 auto;
+    padding: 0.5rem 2rem 0 2rem;
+    text-decoration: underline;
 }
+
+
+

@@ -68,6 +68,7 @@ const Cart = () => {
                     </svg>
                 </button>
                 <button className="btn vaciar_carrito" onClick={clear}>Vaciar carrito</button>
+                <div />
             </div>
         )
     }
