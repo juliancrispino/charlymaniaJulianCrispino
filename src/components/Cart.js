@@ -2,10 +2,9 @@ import { CartContext } from "./CartContext"
 import { useContext } from "react"
 import CartItem from "./CartItem"
 import { Link } from "react-router-dom"
-import { collection } from "firebase/firestore"
+import { collection, addDoc } from "firebase/firestore"
 import Swal from 'sweetalert2'
 import { db } from "../firebase"
-import { addDoc } from "firebase/firestore"
 
 const Cart = () => {
     const { carrito, removeItem, clear, precioTotal } = useContext(CartContext)

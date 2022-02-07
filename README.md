@@ -1,5 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/babd094f-550b-4f33-aad6-64fd2044126b/deploy-status)](https://app.netlify.com/sites/charlymania/deploys)
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ae12ad06-a03b-4618-87b5-9ea1c691ca24/deploy-status)](https://app.netlify.com/sites/charlymania/deploys)
 #  CharlyManía
 
 _Bienvenidos al E-commerce de Charly García_.
