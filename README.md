@@ -52,3 +52,7 @@ Puedes encontrar mucha informacion sobre Charly Garcia en su pagina de [Wikipedi
 
 
 
+## Esquema de navegacion del proyecto
+
+El siguiente gif muestra una breve recorrida por el sitio
+![Esquema navegacion](https://i.ibb.co/9wTQ3Dk/Prueba-Charlymania.gif)
