@@ -2,7 +2,7 @@
 
 #  CharlyManía
 
-_Bienvenidos al E-commerce de Charly García_.
+_Bienvenidos al E-commerce de Charly García, creado para el proyecto final del curso de React JS de Coderhouse._
 
 ## Comienzo 🚀
 
