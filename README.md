@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5fcb7889-28e3-40c9-a815-6cb21d586cce/deploy-status)](https://app.netlify.com/sites/charlymania/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/02212d33-1e48-4175-95fa-55622d8a95f8/deploy-status)](https://app.netlify.com/sites/charlymania/deploys)
 
 #  CharlyManía
 
