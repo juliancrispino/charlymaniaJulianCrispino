@@ -13,9 +13,9 @@ const Cart = () => {
         const coleccionProductos = collection(db, "ordenes")
 
         const usuario = {
-            nombre: "Juan",
-            email: "mail@gmail.com",
-            telefono: "01168697258"
+            nombre: "Julian",
+            email: "julian@gmail.com",
+            telefono: "02234258578"
         }
 
         const orden = {
